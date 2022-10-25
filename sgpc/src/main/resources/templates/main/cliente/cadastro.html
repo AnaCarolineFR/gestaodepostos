@@ -1,0 +1,188 @@
+<!doctype html>
+<html layout:decorate="~{/main/cadastros}">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <section class="layout-content" layout:fragment="corpo">
+    <div class="container">
+      <h1> Clientes </h1>
+      <h3 class="mt-3">Dados do Cliente</h3>
+      <div>
+        <form action="" class="border p-3">
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="idCliente">Id Cliente</label>
+              <input type="number" class="form-control" id="idCliente" placeholder="Código Cliente" readonly>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="tipoCliente">Tipo</label>
+              <select id="tipoCliente" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-8"></div>
+            <div class="form-group col-md-6">
+              <label for="nomeCliente">Nome</label>
+              <input type="text" class="form-control" id="nomeCliente" placeholder="Nome do Cliente" maxlength="80">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="sexoCliente">Sexo</label>
+              <select id="sexoCliente" class="form-control">
+                <option selected>...</option>
+                <option>Feminino</option>
+                <option>Masculino</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="dtNascimentoCliente">Data de Nascimento</label>
+              <input type="date" class="form-control" id="dtNascimentoCliente">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="documentoCliente">Documento</label>
+              <input type="text" class="form-control" id="documentoCliente" placeholder="Documento Cliente" data-mask="###.###.###-#" data-mask-reverse="true"maxlength="30">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="tipoDocumentoCliente">Tipo de Documento</label>
+              <select id="tipoDocumentoCliente" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="dtCadastroCliente">Data de Cadastro</label>
+              <input type="date" class="form-control" id="dtCadastroCliente">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="dtAlteracaoCliente">Data de Alteração</label>
+              <input type="date" class="form-control" id="dtAlteracaoCliente">
+            </div>
+            <div>
+              <button style="margin-right: 15px;" type="button" class="btn btn-primary">Incluir</button>
+              <button style="margin-right: 15px;" type="button" class="btn btn-danger">Excluir</button>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <div clas="container">
+      <h3 class="mt-3">Endereço</h3>
+      <div>
+        <form class="border p-3">
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="idClienteEndereco" hidden>Id Endereço</label>
+              <input type="text" class="form-control" id="idClienteEndereco" placeholder="Id Endereço" hidden>
+            </div>
+            <div class="form-group col-md-2 ">
+              <label for="idCliente" hidden>Id Cliente</label >
+              <input type="text" class="form-control" id="idCliente" placeholder="Id Cliente Cliente" hidden>
+            </div>
+            <div class="form-group col-md-8"></div>
+            <div class="form-group col-md-2">
+              <label for="cepEndCliente">CEP</label>
+              <input type="text" class="form-control" id="cepEndCliente" placeholder="CEP" data-mask="#####-###" data-mask-reverse="true" maxlength="9"> 
+            </div>
+            <div class="form-group col-md-10"></div>
+            <div class="form-group col-md-2">
+              <label for="tipoClienteEndereco">Tipo</label>
+              <select id="tipoClienteEndereco" class="form-control">
+                <option selected>...</option>
+                <option>Rua</option>
+                <option>Avenida</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="logClienteEndereco">Logradouro</label>
+              <input type="text" class="form-control" id="logClienteEndereco" placeholder="Endereço" maxlength="255">
+            </div>
+            <div class="form-group col-md-1">
+              <label for="numClienteEndereco">Número</label>
+              <input type="number" class="form-control" id="numClienteEndereco" placeholder="Nº" maxlength="12">
+            </div>
+            <div class="form-group col-md-1">
+              <label for="compClienteEndereco">Complemento</label>
+              <input type="text" class="form-control" id="compClienteEndereco" placeholder="Compl" maxlength="255">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="bairroClienteEndereco">Bairro</label>
+              <input type="text" class="form-control" id="bairroClienteEndereco" placeholder="Bairro" maxlength="50">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="munClienteEndereco">Município</label>
+              <input type="text" class="form-control" id="munClienteEndereco" placeholder="Município" maxlength="50">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="ufClienteEndereco">UF</label>
+              <select id="ufClienteEndereco" class="form-control">
+                <option selected>Escolher...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2"></div>
+            <div>
+              <button style="margin-right: 15px;" type="button" class="btn btn-primary">Incluir</button>
+              <button style="margin-right: 15px;" type="button" class="btn btn-danger">Excluir</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div clas="container">
+        <h3 class="mt-3">Contatos</h3>
+        <div>
+          <form class="border p-3">
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="clientecontatotelefone" hidden>Id Contato</label>
+                <input class="form-control" id="clientecontatotelefone" placeholder="Id Contato" type="number" hidden>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="idCliente" hidden>Id Cliente</label>
+                <input type="number" class="form-control" id="idCliente" placeholder="Id Cliente Cliente" hidden>
+              </div>
+              <div class="form-group col-md-8"></div>
+              <div class="form-group col-md-2">
+                <label for="meioClienteContato">Meio</label>
+                <select id="meioClienteContato" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Celular</option>
+                  <option>Telefone Fixo</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="contatoclientecontato">Contato</label>
+                <input class="form-control" id="contatoclientecontato" placeholder="Número" type="text" data-mask="0 0000-0000" data-mask-reverse="true" maxlength="12" >
+              </div>
+              <div class="form-group col-md-4">
+                <label for="nomeContatoCliente">Nome</label>
+                <input class="form-control" id="contatoclientecontato" placeholder="Nome" type="text" maxlength="50">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="referenciaClientecontato">Referencia</label>
+                <input class="form-control" id="referenciaClientecontato" placeholder="Referencia" type="text" maxlength="50">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="tipoClienteContatoRef">Tipo de Referencia</label>
+                <select id="tipoClienteContatoRef" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-10"></div>
+
+              <button style="margin-right: 15px;" type="button" class="btn btn-primary">Incluir</button>
+              <button style="margin-right: 15px;" type="button" class="btn btn-danger">Excluir</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </br>
+      </br>
+      </br>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+1- Configurar o Github
+	git config --global user.name "lucatomaz"
+	git config --global user.email "luca.camera@hotmail.com"
+
+2- Comandos GIT
+
+	git status
+	git clone https://github.com/dutra-rafael/sgpc.git
+	git add *tests*(o arquivo que eu quero subir)
+	git commit -m "Criação de Diretório de teste"
+	git push

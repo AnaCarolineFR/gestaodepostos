@@ -1,0 +1,41 @@
+<!doctype html>
+<html layout:decorate="~{/main/cadastros}">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <section class="layout-content" layout:fragment="corpo">
+            <div class="container">
+                <h1>Almoxarifados</h1>
+                <form class="border p-3" th:action="${almoxarifados.id ==null} ? @{/almoxarifados/salvar} : @{/almoxarifados/editar}"
+                    th:object="${almoxarifados}" method="POST">
+                    <div class="form-row">
+                      <div class="form-group col-md-2">
+                        <label for="idAlmoxarifado">Código</label>
+                        <input class="form-control" id="id" placeholder="Código" th:field="*{id}" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-10">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="abrevAlmoxarifado">Almoxarifado</label>
+                          <input class="form-control" id="abreviacao" th:field="*{abreviacao}" placeholder="Almoxarifado" maxlength="12" type="text" required="required" name="text" pattern="[a-z\s]+$" >
+                        </div>
+                    </div>
+                    <div class="form-group col-md-9">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="descricaoAlmoxarifado">Descrição</label>
+                            <input class="form-control" id="descricao" th:field="*{descricao}" placeholder="Descrição" maxlength="30" type="text">
+                        </div>
+                    </div>
+                    <br>
+                    <button style="margin-right: 15px;" type="submit" class="btn btn-primary">Incluir</button>
+                    <button style="margin-right: 15px;" type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

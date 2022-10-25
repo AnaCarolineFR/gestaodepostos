@@ -1,0 +1,183 @@
+<!doctype html>
+<html layout:decorate="~{/main/cadastros}">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <section class="layout-content" layout:fragment="corpo">
+    <div class="container">
+      <h1> Fornecedores</h1>
+      <h3>Dados do Fonecedores</h3>
+      <form class="border p-3">
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="id_fornecedor">Código</label>
+            <input class="form-control" id="id" placeholder="Código" type="number" disabled>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="prodtuto">Tipo</label>
+            <select id="produto" class="form-control">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <!-- <div class="form-group col-md-8"></div> -->
+          <div class="form-group col-md-6">
+            <label for="razao_social">Razão Social</label>
+            <input type="text" class="form-control" id="razao_social" placeholder="Razão Social">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="nome_fantasia">Nome Fantasia</label>
+            <input type="text" class="form-control" id="nome_fantasia" placeholder="Nome Fantasia">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="tipo_documento">Tipo de Doc.</label>
+            <select id="tipo_documento" class="form-control">
+              <option selected>Escolher...</option>
+              <option>CPF</option>
+              <option>CNPJ</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="documento_fornecedores">Documento</label>
+            <input type="text" class="form-control" id="documento_fornecedores" placeholder="Nº Doc.">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inscricao_estadual">Inscrição Estadual</label>
+            <input type="text" class="form-control" id="inscricao_estadual" placeholder="Inscrição Estadual">
+          </div>
+          <div class="form-group col">
+            <label for="inscricao_municipal">Inscrição Municipal</label>
+            <input type="text" class="form-control" id="inscricao_municipal" placeholder="Inscrição Municipal">
+          </div>
+          <!-- <div class="form-group col-md-1"></div> -->
+          <div class="form-group col-md-6">
+            <label for="observacoes_fornecedores">Observações</label>
+            <input class="form-control" id="observacoes_fornecedores" placeholder="Observações">
+            </input>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container">
+      <h3>Endereço</h3>
+      <div>
+        <form class="border p-3">
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <!--label for="id_fornecedor_enderecos">Id Endereço</label-->
+              <input class="form-control" id="id_fornecedor_enderecos" placeholder="Id Endereço" type="number" hidden>
+            </div>
+            <div class="form-group col-md-2">
+              <!--label for="id_fornecedor">Id Fornecedor</label-->
+              <input class="form-control" id="id_fornecedor" placeholder="Id Fornecedor" type="number" hidden>
+            </div>
+            <div class="form-group col-md-8"></div>
+            <div class="form-group col-md-2">
+              <label for="cep_fornecedores">CEP</label>
+              <input type="text" class="form-control" id="cep_fornecedor" placeholder="CEP">
+            </div>
+            <div class="form-group col-md-10"></div>
+            <div class="form-group col-md-2">
+              <label for="tipo_fornecedores_enderecos">Tipo</label>
+              <select id="tipo_fornecedores_enderecos" class="form-control">
+                <option selected>...</option>
+                <option>Rua</option>
+                <option>Avenida</option>
+              </select>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="logradouro_fornecedores_enderecos">Logradouro</label>
+              <input type="text" class="form-control" id="logradouro_fornecedores_enderecos"
+                placeholder="Endereço da empresa...">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="numero_fornecedores_enderecos">Número</label>
+              <input class="form-control" id="numero_fornecedores_enderecos" placeholder="Nº">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="complemento_fornecedores_enderecos">Complemento</label>
+              <input type="text" class="form-control" id="complemento_fornecedores_enderecos" placeholder="Compl">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="bairro_fornecedores_enderecos">Bairro</label>
+              <input type="text" class="form-control" id="bairro_fornecedores_enderecos" placeholder="Bairro">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="municipio_fornecedores_enderecos">Município</label>
+              <input type="text" class="form-control" id="municipio_fornecedores_enderecos" placeholder="Município">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="uf_fornecedores_enderecos">UF</label>
+              <select id="Uf_fornecedores_enderecos" class="form-control">
+                <option selected>Escolher...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div>
+              <button style="margin-right: 15px;" type="button" class="btn btn-primary">Incluir</button>
+              <button style="margin-right: 15px;" type="button" class="btn btn-danger">Excluir</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Contatos</h3>
+      <div>
+        <form class="border p-3">
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="id_fornecedores_contatos">Id Contato</label>
+              <input class="form-control" id="id_fornecedores_contatos" placeholder="Id Contato" type="number">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="id_fornecedores_contatos">Id Fornecedor</label>
+              <input type="number" class="form-control" id="id_fornecedores_contatos" placeholder="Id Fornecedor">
+            </div>
+            <div class="form-group col-md-8">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="meio_fornecedores_contatos">Meio</label>
+              <select id="meio_fornecedores_contatos" class="form-control">
+                <option selected>Choose...</option>
+                <option>Celular</option>
+                <option>Telefone Fixo</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="contato_fornecedores">Contato</label>
+              <input class="form-control" id="contato_fornecedores" placeholder="Id Cliente" type="number">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="nome_fornecedores_contatos">Nome</label>
+              <input class="form-control" id="nome_fornecedores_contatos" placeholder="Nome" type="text">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="referencia_fornecedores_contatos">Referencia</label>
+              <input class="form-control" id="referencia_fornecedores_contatos" placeholder="Referência" type="text">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="tipo_fornecedores_contatos">Tipo de Referencia</label>
+              <select id="tipo_fornecedores_contatos" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <button style="margin-right: 15px;" type="button" class="btn btn-primary">Incluir</button>
+            <button style="margin-right: 15px;" type="button" class="btn btn-danger">Excluir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  </section>
+</body>
+
+</html>

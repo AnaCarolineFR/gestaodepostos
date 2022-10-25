@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/main/lojas}">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <section class="layout-content" style="margin-bottom: 60px;" layout:fragment="corpo">
+        <div class="container">
+            <h1>Venda de Produtos</h1>
+            <h3>Comanda</h3>
+            <div id="alert" th:replace="fragments/alert"></div>
+            <form class="border p-3 mb-2" id="form-pesq-comanda" th:object="${vendasProdutos}"><!--INICIO DO FORM-->
+                <div class="form-row p-2 mb-2">
+                    <div class="form-group col-md-2" hidden>
+                        <label for="codigo">Código</label>
+                        <input type="number" class="form-control" id="id" th:field="*{id}" readonly>
+                    </div>
+                    <div class="form-group col-md-2" hidden>
+                        <label for="codigo">Situacao</label>
+                        <input type="text" class="form-control" id="situacao" th:field="*{situacao}" readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="comanda">Comanda</label>
+                        <input type="text" class="form-control" id="comanda" th:field="*{comanda}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="valortoal">Valor Total</label>
+                        <input type="text" class="form-control" id="vlrTotal" th:field="*{vlrTotal}" readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="qtdtotal">Qtd Total Itens</label>
+                        <input type="text" class="form-control" id="qtdTotal" th:field="*{qtdTotal}" readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="dtAbertura">Data Abertura</label>
+                        <input type="text" class="form-control" id="dtAbertura" th:field="*{dtAbertura}" readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="dtAlteracao">Data Alteração</label>
+                        <input type="text" class="form-control" id="dtAlteracao" th:field="*{dtAlteracao}" readonly>
+                    </div>
+                </div>
+            </form><!--FIM DO FORM -->
+            <form class="border p-3 mb-2" id="form-pesq-produto" th:object="${produtos}"><!--INICIO DO FORM-->
+                <div class="form-row p-2 mb-2">
+                    <div class="form-group col-md-3">
+                        <label for="gtin">Código GTIN</label>
+                        <input type="text" class="form-control" id="gtin" th:field="*{gtin}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <div class="pt-4">
+                            <a class="btn btn-primary btn-md mt-2" th:href="@{/lojas/vendas/listarProdutos}"
+                                role="button">
+                                <span class="oi oi-spreadsheet" title="Pesquisar" aria-hiden="true"></span>
+                                <span>Pesquisar</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <div class="form-group col-md-1">
+                            <label for="item">Item</label>
+                            <input type="text" class="form-control" id="item" readonly>
+                        </div>
+                        <div class="form-group col-md-9">
+                            <label for="descricao">Descrição do Produto</label>
+                            <input type="text" class="form-control" id="descricao" th:field="*{descricao}" readonly>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="unitario">Valor Unitario</label>
+                            <input type="text" class="form-control" id="precoVenda" th:field="*{precoVenda}" readonly>
+                        </div>
+                        <input type="text" class="form-control" id="id-prod" th:field="*{id}" readonly hidden>
+                    </div>
+                </div>
+            </form><!--FIM DO FORM-->
+            <form class="border p-3 mb-2" id="form-pesq-vendaProdutoItem"   th:object="${vendasProdutosItens}" method="POST"><!--INICIO DO FORM-->
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="qtdItem">Quantidade</label>
+                        <input type="text" class="form-control" id="quantidade" th:field="*{quantidade}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                        <div>
+                            <button style="margin-right: 15px;" type="button" class="btn btn-primary" id="btnIncluir">Incluir</button>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-1">
+                        <div>
+                            <button style="margin-right: 15px;" type="button" class="btn btn-danger" id="btnExcluir">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            </form><!--FIM DO FORM-->
+            <h3 class="mt-3">Itens da Comanda</h3>
+            <div class="form-row mt-3 p-3 border">
+                <div class="form-group col-md-12">
+                    <table class="display nowrap" id="table-comanda" style="width:100%">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">GTIN</th>
+                                <th scope="col">Qtd</th>
+                                <th scope="col">Vl. Unit</th>
+                                <th scope="col">Vl. Total</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script th:replace=":: js"></script>
+</body>
+
+</html>

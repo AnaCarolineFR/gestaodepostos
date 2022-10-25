@@ -1,0 +1,8 @@
+1- Configurar o Github
+	git config --global user.name "lucatomaz"
+	git config --global user.email "luca.camera@hotmail.com"
+
+2- Status do GIT
+
+	git status
+	git clone https://github.com/dutra-rafael/sgpc.gitgit

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/main/cadastros}">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <section class="layout-content" layout:fragment="corpo">
+      <div class="container">
+        <div class="col">
+          <h1>Lista de Usuários</h1>
+        </div>
+      </div>
+        <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Apelido</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">RG</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Cargo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="i : ${usuarios}">
+                    <td th:text="${i.id}">1</td>
+                    <td th:text="${i.apelidoUsuario}">Apelido</td>
+                    <td th:text="${i.nomeUsuario}">Nome</td>
+                    <td th:text="${i.rgUsuario}">RG</td>
+                    <td th:text="${i.cpfUsuario}">CPF</td>
+                    <td th:text="${i.cargo.descricao}">Cargo</td>
+                    <td>
+                        <a th:href="@{/usuarios/editar/{id}(id=${i.id})}">
+                            <button style="margin-right: 15px;" type="button" class="btn btn-warning">Alterar</button>
+                        </a>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

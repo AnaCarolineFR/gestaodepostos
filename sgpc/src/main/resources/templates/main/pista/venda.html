@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/main/pistas}">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <section class="layout-content" style="margin-bottom: 60px;" layout:fragment="corpo">
+        <div class="container">
+            <h1>Vendas de Combustíveis</h1>
+            <h3>Ordem</h3>
+            <form th:action="@{/pistas/vendas/abastecimento}" th:object="${vendasCombustiveis}" method="POST">
+                <div class="border p-3 mb-3">
+                    <div th:object="${usuarios}">
+                        <div class="form-row" >
+                            <div class="form-group col-md-2">
+                                <label for="">Chapa</label>
+                                <input class="form-control" id="chapa" th:field="*{id}" type="number">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Frentista</label>
+                                <input class="form-control" id="funcionario" th:field="*{apelidoUsuario}" type="text" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-row" th:object="${combustiveisTanques}">
+                            <div class="form-group col-md-2">
+                                <label for="">Bomba</label>
+                                <select class="form-control" id="cboBomba">
+                                    <option value="">Selecione...</option>
+                                    <option th:each="c : ${combustiveisTanques}" th:value="${c.id}" th:text="${c.descricao}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Tipo</label>
+                                <select class="form-control" name="" id="cboTipoCombustivel">
+                                    <option value="">Selecione...</option>
+                                    <option th:each="c : ${tipoCombustiveisTanques}" th:value="${c.produto.id}" th:text="${c.produto.descricao}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">Valor</label>
+                                <input type="text" class="form-control" id="precoVenda" readonly>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">Unid.</label>
+                                <input type="text" class="form-control" id="unidade" readonly>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <input type="text" id="idCombustivelTanque" readonly>
+                                <input type="text" id="idProduto" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-row">
+                            <!-- <div class="form-group col-md-2">
+                                <label for="">Código</label>
+                                <input class="form-control" type="text" th:field="*{id}" readonly>
+                            </div> -->
+                            <div class="form-group col-md-2">
+                                <label for="">Valor</label>
+                                <input type="text" class="form-control" th:field="*{vlrTotal}">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">Quantidade</label>
+                                <input type="text" class="form-control" th:field="*{quantidade}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-success col-md-2 mt-1" id="abastecer">Abastecer</button>
+                <button class="btn btn-danger col-md-2 mt-1" id="cancelar">Cancelar</button>
+            </form>
+        </div>
+    </section>
+    <script th:replace=":: js"></script>
+    <!-- <script th:replace=" :: inlinescript" th:inline="javascript"></script> -->
+    <!-- <script th:src="@{/js/vendaCombustiveis.js}" th:fragment="js"></script> -->
+</body>
+
+</html>
